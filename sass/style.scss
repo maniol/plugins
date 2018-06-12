@@ -15,6 +15,7 @@ body { font-family: 'Roboto', sans-serif;}
   background-position: center;
   text-align: center;
   border-radius: 5px;
+  position: relative; 
     .container {
     max-width: 1200px;
     margin: auto;
@@ -23,6 +24,15 @@ body { font-family: 'Roboto', sans-serif;}
     color: white;
     text-shadow: 2px 2px black;
     }
+    .caption {
+    background: hsla(191, 0%, 70%, 0.5);
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    position: absolute;
+    bottom: 0;
+}
 }
 .restart {  /*dlaczego selektor button .restart nie dziala*/
   position: absolute; 

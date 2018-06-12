@@ -13,26 +13,53 @@
     <header></header>
     <div class="carousel">
       <button class="restart"><i class="fas fa-sync-alt"></i></button>
-      <div class="carousel-cell" id="tempelhof" style="background-image: url('images/tempelhof.jpg')">
-        <div class="container">Tempelhof</div>
+      <script id="template-slide" type="x-tmpl-mustache">
+      <div class="carousel-cell" id="{{ id }}" style="background-image: url('{{ image }}')">
+        <div class="container">{{ title }}</div>
+        <div class="caption"{{{description}}}
       </div>
-      <div class="carousel-cell" id="betahaus" style="background-image: url('images/betahaus.jpg')">
-        <div class="container">Betahaus</div>
-      </div>
-      <div class="carousel-cell" id="BK" style="background-image: url('images/BK.jpg')">
-        <div class="container">BoulderKlub</div>
-      </div>
-      <div class="carousel-cell" id="prinzessinnengarten" style="background-image: url('images/prinzessinnengarten.jpg')">
-        <div class="container">Prinzessinnengarten</div>
-      </div>
-      <div class="carousel-cell" id="tiergarten" style="background-image: url('images/tiergarten.jpg')">
-        <div class="container">Tiergarten</div>
-      </div>
+      </script>
     </div>
     <div class="progress-bar"></div>
+
+    <script>
+    var carouselData = [
+      {
+        id: 'tempelhof',
+        image: 'images/tempelhof.jpg', 
+        title: 'Tempelhof',
+        description: '<p>Tempelhof was one of the most important airports in the history of Germany. After its closure, it was reopened in 2010 and is currently the largest public park in Berlin.</p><a href=\'https://en.wikipedia.org/wiki/Berlin_Tempelhof_Airport\'>Wiki</a>'
+      },
+      {
+        id: 'betahaus',
+        image: 'images/betahaus.jpg', 
+        title: 'Betahaus',
+        description: '<p>Betahaus is a coworking space and community for people who want to work on their own projects while exchanging knowledge, ideas, and inspiration with others.</p><a href=\'https://www.betahaus.com/\'>Web</a>'
+      },
+      {
+        id: 'BK',
+        image: 'images/BK.jpg', 
+        title: 'BouldeKlub',
+        description: '<p>Willkommen im Klub, Berlin\'s Premier Bouldering Gym with state of the art walls, a cafe, training room and courses.</p><a href=\'https://www.facebook.com/boulderklubkreuzberg\'>Web</a>'
+      },
+      {
+        id: 'prinzessinnengarten',
+        image: 'images/prinzessinnengarten.jpg', 
+        title: 'Prinzessinnengarten',
+        description: '<p>The Prinzessinnengärten are a social and ecological urban agriculture on Moritzplatz in Berlin-Kreuzberg.</p><a href=\'http://prinzessinnengarten.net/\'>Web</a> '
+      },
+      {
+        id: 'tiergarten',
+        image: 'images/tiergarten.jpg', 
+        title: 'Tiergarten',
+        description: '<p>Berlin\'s Tiergarten is the equivalent of Central Park in New York or London\'s Hyde Park: the green lung of the metropolis.</p><a href=\'https://www.visitberlin.de/es/tiergarten\'>Web</a>'
+      }
+    ];
+    </script>
     <!-- JavaScript -->
     <script src="vendor/flickity.pkgd.min.js"></script> 
     <script src="vendor/hash.js"></script> 
+    <script src="vendor/mustache.js"></script> 
     <script src="js/script.js"></script> 
   </body>
 </html>
