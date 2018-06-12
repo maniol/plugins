@@ -4,3 +4,9 @@ var flkty = new Flickity( '.carousel', {
   draggable: false,
   cellSelector: ".carousel-cell"
 });
+
+var restartButton = document.querySelector('.restart');
+
+restartButton.addEventListener( 'click', function() {
+	flkty.selectCell('#tempelhof');
+});

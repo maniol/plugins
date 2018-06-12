@@ -24,4 +24,15 @@ body {
     color: white;
     text-shadow: 2px 2px black; }
 
+.restart {
+  /*dlaczego selektor button .restart nie dziala*/
+  position: absolute;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  padding: 2px 20px;
+  font-size: 26px;
+  color: white;
+  left: 10px;
+  top: 10px; }
+
 /*# sourceMappingURL=style.css.map */
