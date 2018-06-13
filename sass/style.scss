@@ -32,8 +32,9 @@ body { font-family: 'Roboto', sans-serif;}
     color: white;
     position: absolute;
     bottom: 0;
+    }
 }
-}
+
 .restart {  /*dlaczego selektor button .restart nie dziala*/
   position: absolute; 
   background: hsla(0, 0%, 0%, 0.3);
@@ -44,6 +45,7 @@ body { font-family: 'Roboto', sans-serif;}
   left: 10px;
   top: 10px;
 }
+
 .progress-bar {
   height: 20px;
   width: 0;
