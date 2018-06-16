@@ -51,3 +51,10 @@ body { font-family: 'Roboto', sans-serif;}
   width: 0;
   background: hsla(0, 0%, 0%, 0.3);
 }
+
+ #map {
+  height: 50vh;
+  min-height: 250px;
+  margin-right: 10px;
+  width: 100%;  /* The width is the width of the web page */
+}
