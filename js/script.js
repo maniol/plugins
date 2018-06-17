@@ -31,12 +31,9 @@ flkty.on( 'scroll', function( progress ) {
   var infos = document.getElementById('infos');
  // Initialize and add the map
   window.initMap = function () {
-    // The location of Tempelhof
-    var tempelhofCoord = {lat: 52.462553, lng: 13.392475};
-    var uluru = {lat: -25.344, lng: 131.036};
     // The map, centered at Tempelhof
     var map = new google.maps.Map(
-    document.getElementById('map'), {zoom: 14, center: tempelhofCoord});
+    document.getElementById('map'), {center: {lat: 52.462553, lng: 13.392475}, zoom: 14});
     // Assign markers to locations
     for (var location in carouselData) {
       var markerName = carouselData[location]['id'] + 'Marker';
