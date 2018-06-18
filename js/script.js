@@ -27,29 +27,25 @@ flkty.on( 'scroll', function( progress ) {
   progressBar.style.width = progress * 100 + '%';
 });
 
-
-
-/*(function() {*/
-  var infos = document.getElementById('infos');
- // Initialize and add the map
-  window.initMap = function () {
-    // The location of Tempelhof
-    var tempelhofCoord = {lat: 52.462553, lng: 13.392475};
-    // The map, centered at Tempelhof
-    var map = new google.maps.Map(
-    document.getElementById('map'), {zoom: 14, center: tempelhofCoord});
-    flkty.on( 'change', function( index) {
-      var coords = carouselData[index]['coords'];
-      map.setZoom(16);
-      map.setCenter(coords);
+var infos = document.getElementById('infos');
+// Initialize and add the map
+window.initMap = function () {
+  // The location of the first slide
+  var firstSlideCoord = carouselData[0]['coords'];
+  // The map, centered at firstSlideCoord
+  var map = new google.maps.Map(
+  document.getElementById('map'), {zoom: 14, center: firstSlideCoord});
+  flkty.on( 'change', function(index) {
+    var coords = carouselData[index]['coords'];
+    map.setZoom(16);
+    map.setCenter(coords);
+  });
+  // Assign markers to locations
+  for (let i = 0; i < carouselData.length; i++) {
+    var markerName = carouselData[i]['id'] + 'Marker';
+    markerName = new google.maps.Marker({position: carouselData[i]['coords'], map: map});
+    markerName.addListener('click', function(){
+      flkty.selectCell(i);
     });
-    // Assign markers to locations
-    for (var i = 0; i < carouselData.length; i++) {
-      var markerName = carouselData[i]['id'] + 'Marker';
-      markerName = new google.maps.Marker({position: carouselData[i]['coords'], map: map});
-      markerName.addListener('click', function(){
-        flkty.selectCell(i);
-      });
-    }
-  };
-/*})();*/
+  }
+};
